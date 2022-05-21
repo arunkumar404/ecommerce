@@ -16,7 +16,7 @@ const Sidebar = ({filters, setFilters}) => {
     if(filters.category.includes(e.target.value)){
       setFilters({
         ...filters,
-        ["category"]:[...(filters.category.filter((item)=>{
+        [e.target.name]:[...(filters.category.filter((item)=>{
           return item!==e.target.value
         }))]
       })
@@ -24,7 +24,7 @@ const Sidebar = ({filters, setFilters}) => {
     else{
       setFilters({
         ...filters,
-        ["category"]:[...filters.category,e.target.value]
+        [e.target.name]:[...filters.category,e.target.value]
       })
     }
   }
@@ -43,7 +43,7 @@ const Sidebar = ({filters, setFilters}) => {
       {
       distinctCategories&&distinctCategories.map((category,index)=>{
         return <div key={index}>
-          <input type="checkbox" id={category} name={category} value={category} checked={filters.category.includes(category)} onChange={handleCheckChange}/>  
+          <input type="checkbox" id={category} name="category" value={category} checked={filters.category.includes(category)} onChange={handleCheckChange}/>  
           <label htmlFor={category}> {category} </label>
           <br/>
         </div>

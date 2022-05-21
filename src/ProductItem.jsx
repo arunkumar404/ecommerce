@@ -9,7 +9,7 @@ const ProductItem = ({product}) => {
         <div className="productInfo">
             <p className="productTitle">{title.slice(0,50)}{title.length>50&&"..."}</p>
             <p className="productPrice">
-                <small>₹ </small>
+                <small>$ </small>
                 <strong>{price}</strong>
             </p>
             <div className="productRating">

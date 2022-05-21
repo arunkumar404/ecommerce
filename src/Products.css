@@ -22,13 +22,40 @@
         transform: rotate(360deg);
     }
 }
-.allProducts{
+.productsContainer{
     width:75%;
-    padding: 3%;
+}
+.allProducts{
+    width:100%;
+    padding: 3%;    
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     gap:2%;
-    height:100%;
+    min-height:100vh;
     background: linear-gradient(to right,#373B44,#4286f4);
 }
+.emptyList{
+    width:100%;
+    height:100%;
+    display: grid;
+    place-items: center;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.2rem;
+    color:rgba(250, 235, 215, 0.685);
+}
+
+.sortBar{
+    text-align: right;
+    margin-right: 3rem;
+    background-color: rgba(250, 235, 215, 0.26)
+}
+select {
+    width: 18%;
+    padding: 5px 10px;
+    margin: 8px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}   

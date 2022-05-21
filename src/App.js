@@ -56,7 +56,7 @@ const [finalItems, setFinalItems] = useState(products)
 
     setFinalItems(filteredProducts)
 
-  },[filters])
+  },[filters,products])
 
   return (
     <div className="App">

@@ -4,14 +4,18 @@ import "./Products.css";
 
 const Products = ({filteredProducts, loading, error}) => {
 
+    //sort method state
     const [sort, setSort] = useState("")
 
+    //sorted items state
     const [sortedProducts, setSortedProducts] = useState([])
 
-     useEffect(()=>{
-        setSortedProducts(filteredProducts)
-      },[filteredProducts])
-
+    //set inital sorted items state with props on load and every prop change
+    useEffect(()=>{
+      setSortedProducts(filteredProducts)
+    },[filteredProducts])
+    
+    //sort the items on load and on every sort option change and on items list change
       useEffect(()=>{
         let sortArray = []
         if(sort==="price low to high"){
@@ -40,10 +44,12 @@ const Products = ({filteredProducts, loading, error}) => {
         }
       },[sort,filteredProducts])
 
+    //set sort method on change
     const handleChange = (e) =>{
       setSort(e.target.value)
     }
 
+    //show loading page before fetching ddta
     if(loading){
       return (
         <div className="loading">

@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
+
 import './App.css';
 import Products from './Products';
 import Sidebar from './Sidebar';
+
+//custom hook for fetching data
 import { useFetch } from './useFetch';
 
 function App() {
 
+  //get data from api using custom hook
 const {products, loading, error} = useFetch();
+
+//state for filtered list
 const [finalItems, setFinalItems] = useState(products)
 
  const initialFilterState = {
@@ -16,10 +22,13 @@ const [finalItems, setFinalItems] = useState(products)
   }
   const [filters, setFilters] = useState(initialFilterState)
   
+  //set list with all products
   useEffect(()=>{
     setFinalItems(products)
   },[products])
   
+
+  //filter the list when chage in filter options
   useEffect(()=>{
     let filteredProducts = products;
 

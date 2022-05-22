@@ -2,9 +2,12 @@ import React from 'react'
 import "./ProductItem.css"
 
 const ProductItem = ({product}) => {
+
+    //destructure props
     const {title, price, image} = product
     const {rate} = product.rating
-  return (
+  
+    return (
     <div className="product">
         <div className="productInfo">
             <p className="productTitle">{title.slice(0,50)}{title.length>50&&"..."}</p>

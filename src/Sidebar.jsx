@@ -4,14 +4,17 @@ import { useFetch } from './useFetch';
 
 const Sidebar = ({filters, setFilters}) => {
 
+  //get all products  using custom hook
   const {products} = useFetch();
 
+  //get all distinct categories for filter
   var distinctCategories = []
   for (let i = 0; i < products.length; i++){
     if (!distinctCategories.includes(products[i].category))
         distinctCategories.push(products[i].category)
       }
 
+  //category filter selection handler
   const handleCheckChange = (e) =>{
     if(filters.category.includes(e.target.value)){
       setFilters({
@@ -29,6 +32,7 @@ const Sidebar = ({filters, setFilters}) => {
     }
   }
 
+  //other filter change handler
   const handleChange = (e) =>{
     setFilters({
       ...filters,

@@ -1,10 +1,12 @@
 import {useState, useEffect} from "react";
 
 export const useFetch = () =>{
+    //set inital states
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState("")
     
+    //get data from api on load
     useEffect(()=>{    
     const getProducts = async()=>{
         try{
@@ -19,6 +21,8 @@ export const useFetch = () =>{
     }
     getProducts();
     },[])
-return {products, loading, error}
+
+    return {products, loading, error}
+
 }
 
